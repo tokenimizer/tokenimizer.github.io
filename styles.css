@@ -1,14 +1,14 @@
 :root {
   color-scheme: light;
-  --paper: #f1efe8;
-  --ink: #20231f;
-  --muted: #696c62;
-  --line: #d3d1c8;
-  --orange: #e85c36;
-  --blue: #a7c7d8;
-  --lime: #d6e65c;
-  --font-display: "Space Grotesk", "Trebuchet MS", sans-serif;
-  --font-mono: "DM Mono", "Courier New", monospace;
+  --paper: #F5F5F8;
+  --ink: #0B0D12;
+  --muted: #5A5F6E;
+  --line: #E2E3EA;
+  --orange: #6B4AF5;
+  --blue: #EDE8FF;
+  --lime: #9D86FF;
+  --font-display: "Inter", "Helvetica Neue", sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
 }
 
 * {
@@ -22,7 +22,7 @@ html {
 body {
   margin: 0;
   background-color: var(--paper);
-  background-image: radial-gradient(#20231f12 0.65px, transparent 0.65px);
+  background-image: radial-gradient(#0B0D120A 0.65px, transparent 0.65px);
   background-size: 7px 7px;
   color: var(--ink);
   font-family: var(--font-display);
@@ -77,13 +77,29 @@ a:focus-visible {
 }
 
 .wordmark-mark {
-  display: grid;
+  display: block;
   width: 31px;
+  height: 31px;
   aspect-ratio: 1;
-  place-items: center;
-  background: var(--ink);
-  color: var(--paper);
-  font-size: 16px;
+  object-fit: contain;
+}
+
+.wordmark-copy {
+  display: grid;
+  gap: 2px;
+}
+
+.wordmark-brand {
+  font-size: 14px;
+  line-height: 1.1;
+}
+
+.wordmark-by {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 1.1;
 }
 
 .site-nav {
@@ -369,6 +385,184 @@ a:focus-visible {
   animation: loading 1s steps(4, end) infinite;
 }
 
+.journal-teaser {
+  padding: 67px 0 78px;
+}
+
+.journal-page {
+  width: min(850px, calc(100% - 80px));
+  margin: 0 auto;
+  padding: 72px 0 105px;
+}
+
+.journal-page > .eyebrow {
+  margin-bottom: 15px;
+}
+
+.journal-page-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 38px;
+}
+
+.journal-page-heading h1 {
+  margin: 0;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 1.08;
+}
+
+.journal-list {
+  border-top: 1px solid var(--line);
+}
+
+.journal-row {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr) 24px;
+  align-items: start;
+  gap: 22px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.journal-row time,
+.journal-tags {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.journal-row-copy {
+  display: grid;
+  gap: 7px;
+}
+
+.journal-row-title {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.journal-row-summary {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.journal-row-arrow {
+  color: var(--orange);
+  font-size: 16px;
+  transition: transform 160ms ease;
+}
+
+.journal-row:hover .journal-row-arrow {
+  transform: translate(2px, -2px);
+}
+
+.journal-row:hover .journal-row-title {
+  color: var(--orange);
+}
+
+.journal-empty {
+  margin: 0;
+  padding: 22px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.post-page {
+  width: min(720px, calc(100% - 80px));
+  margin: 0 auto;
+  padding: 56px 0 100px;
+}
+
+.post-back-link {
+  display: inline-block;
+  margin-bottom: 34px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.post-header .eyebrow {
+  margin-bottom: 15px;
+}
+
+.post-header h1 {
+  margin: 0;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 1.12;
+}
+
+.post-deck {
+  margin: 19px 0 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.post-content {
+  margin-top: 44px;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.post-content h2,
+.post-content h3 {
+  margin: 1.8em 0 0.6em;
+  line-height: 1.25;
+}
+
+.post-content h2 { font-size: 28px; }
+.post-content h3 { font-size: 21px; }
+
+.post-content a {
+  color: var(--orange);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.post-content pre {
+  overflow-x: auto;
+  padding: 18px;
+  border: 1px solid var(--line);
+  background: #EDEEF3;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.post-content code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+.post-content :not(pre) > code {
+  padding: 2px 5px;
+  background: #EDEEF3;
+}
+
+.post-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 54px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.journal-tags {
+  text-transform: uppercase;
+}
+
 .about {
   padding: 65px 0 75px;
 }
@@ -429,7 +623,7 @@ a:focus-visible {
 
 .footer-mark .wordmark-mark {
   width: 25px;
-  font-size: 13px;
+  height: 25px;
 }
 
 .site-footer p {
@@ -455,6 +649,7 @@ a:focus-visible {
   .site-footer,
   .intro,
   .projects,
+  .journal-teaser,
   .about {
     width: calc(100% - 40px);
   }
@@ -532,6 +727,11 @@ a:focus-visible {
     gap: 28px;
   }
 
+  .journal-page,
+  .post-page {
+    width: calc(100% - 40px);
+  }
+
   .section-heading h2 { font-size: 34px; }
   .about h2 { font-size: 42px; }
 }
@@ -557,6 +757,60 @@ a:focus-visible {
   .site-nav {
     gap: 13px;
     font-size: 11px;
+  }
+
+  .site-header {
+    height: auto;
+    min-height: 72px;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 14px 0;
+  }
+
+  .site-nav {
+    flex: 1 1 100%;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 10px;
+  }
+
+  .journal-page,
+  .post-page {
+    width: calc(100% - 32px);
+  }
+
+  .journal-page-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .journal-page-heading h1,
+  .post-header h1 {
+    font-size: 38px;
+  }
+
+  .journal-row {
+    grid-template-columns: minmax(0, 1fr) 20px;
+    gap: 8px 12px;
+  }
+
+  .journal-row time {
+    grid-column: 1 / -1;
+  }
+
+  .journal-row-copy {
+    grid-column: 1;
+  }
+
+  .journal-row-arrow {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .post-content {
+    margin-top: 32px;
+    font-size: 15px;
   }
 
   .intro {

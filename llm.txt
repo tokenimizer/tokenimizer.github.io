@@ -1,5 +1,10 @@
-# Tokenimizer
+# Tokenimizer, Principal Developer at Hidden Tokens
 
-This is the personal website for the GitHub account [tokenimizer](https://github.com/tokenimizer).
+Personal journal about building privacy-first AI workflows, projects, tools, and setups.
 
-For the structured site summary, see [/llms.txt](https://tokenimizer.github.io/llms.txt).
+- Site: https://tokenimizer.github.io/
+- Product: https://hiddentokens.com/
+- Journal: https://tokenimizer.github.io/journal/
+- X: https://x.com/theHiddenTokens
+- GitHub: https://github.com/tokenimizer
+- Structured site guide: https://tokenimizer.github.io/llms.txt

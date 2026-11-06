@@ -1,14 +1,29 @@
+---
+layout: null
+permalink: /llms.txt
+---
 # Tokenimizer
 
-> Personal website for the GitHub account tokenimizer.
+> Personal journal of Tokenimizer, principal developer at Hidden Tokens.
 
-The site presents Tokenimizer and links to public repositories. Repository names, descriptions, and profile details are sourced from GitHub and may change.
+The site shares notes on building Hidden Tokens, privacy-first AI workflows, projects, tools, and setups. Hidden Tokens anonymises documents locally before they are sent to AI services. Profile and repository details sourced from GitHub may change.
 
 ## Pages
 
-- [Homepage](https://tokenimizer.github.io/): Personal site, profile, and repository links.
+- [Homepage](https://tokenimizer.github.io/): Profile, projects, and recent journal entries.
+- [Journal](https://tokenimizer.github.io/journal/): All published journal entries.
+- [RSS feed](https://tokenimizer.github.io/feed.xml): Subscribe to new entries.
+- [Hidden Tokens](https://hiddentokens.com/): Product website.
+
+## Latest Entries
+{% for post in site.posts limit:10 %}
+- [{{ post.title | escape }}]({{ post.url | absolute_url }}): {{ post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 180 | escape }}
+{% else %}
+- No journal entries have been published yet.
+{% endfor %}
 
 ## Profiles
 
-- [GitHub profile](https://github.com/tokenimizer): Source of truth for public repositories and account details.
+- [GitHub](https://github.com/tokenimizer): Source for public repositories.
 - [Public repositories](https://github.com/tokenimizer?tab=repositories): Current public repository list.
+- [X](https://x.com/theHiddenTokens): Hidden Tokens project account.

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0B0D12" />
+    {% assign meta_description = page.description | default: page.excerpt | default: site.description | strip_html | strip_newlines | escape %}
+    {% assign meta_title = page.title | default: site.title %}
+    {% assign share_image = page.image | default: site.brand.image | absolute_url %}
+    <meta name="description" content="{{ meta_description }}" />
+    <meta name="author" content="{{ page.author | default: site.author.name | escape }}" />
+    <link rel="canonical" href="{{ page.url | absolute_url }}" />
+    {% if page.url == "/" %}
+      <title>{{ site.title | escape }} | Principal Developer at {{ site.brand.name | escape }}</title>
+    {% else %}
+      <title>{{ meta_title | escape }} | {{ site.title | escape }}</title>
+    {% endif %}
+    <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}" />
+    <meta property="og:site_name" content="{{ site.brand.name | escape }}" />
+    <meta property="og:title" content="{{ meta_title | escape }} | {{ site.brand.name | escape }}" />
+    <meta property="og:description" content="{{ meta_description }}" />
+    <meta property="og:url" content="{{ page.url | absolute_url }}" />
+    <meta property="og:image" content="{{ share_image }}" />
+    <meta property="og:image:alt" content="Hidden Tokens brand graphic" />
+    <meta property="og:locale" content="en_US" />
+    {% if page.layout == 'post' %}<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}" />{% endif %}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="{{ site.brand.x_handle }}" />
+    <meta name="twitter:title" content="{{ meta_title | escape }} | {{ site.brand.name | escape }}" />
+    <meta name="twitter:description" content="{{ meta_description }}" />
+    <meta name="twitter:image" content="{{ share_image }}" />
+    <meta name="twitter:image:alt" content="Hidden Tokens brand graphic" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "{{ '/' | absolute_url }}#website",
+            "url": {{ '/' | absolute_url | jsonify }},
+            "name": {{ site.title | jsonify }},
+            "inLanguage": {{ site.lang | jsonify }},
+            "publisher": { "@id": "{{ '/' | absolute_url }}#person" }
+          },
+          {
+            "@type": "Person",
+            "@id": "{{ '/' | absolute_url }}#person",
+            "name": {{ site.author.name | jsonify }},
+            "alternateName": "tokenimizer",
+            "jobTitle": {{ site.author.job_title | jsonify }},
+            "url": {{ '/' | absolute_url | jsonify }},
+            "worksFor": { "@id": "https://hiddentokens.com/#organization" },
+            "sameAs": ["https://github.com/tokenimizer", "https://x.com/theHiddenTokens"]
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://hiddentokens.com/#organization",
+            "name": {{ site.brand.name | jsonify }},
+            "url": {{ site.brand.url | jsonify }},
+            "logo": {{ site.brand.icon | jsonify }},
+            "sameAs": ["https://x.com/theHiddenTokens"]
+          }
+        ]
+      }
+    </script>
+    <link rel="icon" type="image/svg+xml" href="{{ site.brand.icon }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}" />
+    <link rel="alternate" type="application/atom+xml" title="{{ site.title | escape }} journal" href="{{ '/feed.xml' | relative_url }}" />
+    {% if page.url == "/" %}<script src="{{ '/script.js' | relative_url }}" defer></script>{% endif %}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="wordmark" href="{{ site.brand.url }}" aria-label="Hidden Tokens website">
+        <img class="wordmark-mark" src="{{ site.brand.icon }}" alt="" />
+        <span class="wordmark-copy"><span class="wordmark-brand">{{ site.brand.name }}</span><span class="wordmark-by">by {{ site.author.name }}</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        {% if page.url == "/" %}
+          <a href="#projects">Projects</a>
+          <a href="#journal">Journal</a>
+          <a href="#about">About</a>
+        {% else %}
+          <a href="{{ '/' | relative_url }}#projects">Projects</a>
+          <a href="{{ '/journal/' | relative_url }}">Journal</a>
+          <a href="{{ '/' | relative_url }}#about">About</a>
+        {% endif %}
+        <a href="{{ site.brand.x_url }}" target="_blank" rel="noreferrer" aria-label="Hidden Tokens on X">X <span aria-hidden="true">↗</span></a>
+        <a class="nav-github" href="{{ site.author.github_url }}" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main id="main">{{ content }}</main>
+
+    <footer class="site-footer">
+      <a class="wordmark footer-mark" href="{{ site.brand.url }}"><img class="wordmark-mark" src="{{ site.brand.icon }}" alt="" /><span class="wordmark-copy"><span class="wordmark-brand">{{ site.brand.name }}</span><span class="wordmark-by">by {{ site.author.name }}</span></span></a>
+      <p>{{ site.author.job_title }} <span aria-hidden="true">/</span> <a href="{{ site.brand.url }}">{{ site.brand.name }}</a></p>
+      <a href="{{ site.brand.x_url }}" target="_blank" rel="noreferrer">X ↗</a>
+      <a href="{{ site.author.github_url }}" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </footer>
+  </body>
+</html>

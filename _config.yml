@@ -1,0 +1,34 @@
+title: Tokenimizer
+description: Journal of Tokenimizer, principal developer at Hidden Tokens. Notes on privacy-first AI workflows, projects, and setups.
+url: https://tokenimizer.github.io
+baseurl: ""
+lang: en
+timezone: UTC
+markdown: kramdown
+permalink: /journal/:year/:month/:day/:title/
+brand:
+  name: Hidden Tokens
+  url: https://hiddentokens.com/
+  role: Principal Developer
+  icon: https://hiddentokens.com/assets/hidden-tokens-appicon.svg
+  image: https://hiddentokens.com/assets/og-en.png
+  x_url: https://x.com/theHiddenTokens
+  x_handle: "@theHiddenTokens"
+author:
+  name: Tokenimizer
+  url: https://tokenimizer.github.io/
+  github_url: https://github.com/tokenimizer
+  job_title: Principal Developer
+social:
+  links:
+    - https://github.com/tokenimizer
+    - https://x.com/theHiddenTokens
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: Tokenimizer
+exclude:
+  - README.md

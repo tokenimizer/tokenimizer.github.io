@@ -56,7 +56,7 @@ async function loadProfile() {
 
     if (profileResponse.ok) {
       const profile = await profileResponse.json();
-      if (profile.bio) profileBio.textContent = profile.bio;
+      if (profile.bio && profileBio) profileBio.textContent = profile.bio;
       if (profile.avatar_url) {
         const avatarUrl = new URL(profile.avatar_url);
         avatarUrl.searchParams.set("size", "640");

@@ -1,3 +1,9 @@
+---
+layout: null
+title: Tokenimizer
+description: Journal of Tokenimizer, principal developer at Hidden Tokens. Notes on privacy-first AI workflows, projects, and setups.
+permalink: /
+---
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,30 +12,32 @@
     <meta name="theme-color" content="#f1efe8" />
     <meta
       name="description"
-      content="The personal corner of the web for Tokenimizer: projects, code, and experiments."
+      content="Journal of Tokenimizer, principal developer at Hidden Tokens. Notes on privacy-first AI workflows, projects, and setups."
     />
     <meta name="author" content="Tokenimizer" />
     <link rel="canonical" href="https://tokenimizer.github.io/" />
-    <title>Tokenimizer — personal site</title>
+    <title>Tokenimizer | Principal Developer at Hidden Tokens</title>
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Tokenimizer" />
-    <meta property="og:title" content="Tokenimizer — personal site" />
+    <meta property="og:site_name" content="Hidden Tokens" />
+    <meta property="og:title" content="Tokenimizer | Principal Developer at Hidden Tokens" />
     <meta
       property="og:description"
-      content="The personal corner of the web for Tokenimizer: projects, code, and experiments."
+      content="Journal of Tokenimizer, principal developer at Hidden Tokens. Notes on privacy-first AI workflows, projects, and setups."
     />
     <meta property="og:url" content="https://tokenimizer.github.io/" />
-    <meta property="og:image" content="https://github.com/tokenimizer.png?size=1200" />
-    <meta property="og:image:alt" content="Tokenimizer’s GitHub profile avatar" />
+    <meta property="og:image" content="https://hiddentokens.com/assets/og-en.png" />
+    <meta property="og:image:alt" content="Hidden Tokens brand graphic" />
     <meta property="og:locale" content="en_US" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Tokenimizer — personal site" />
+    <meta name="twitter:site" content="@theHiddenTokens" />
+    <meta name="twitter:title" content="Tokenimizer | Principal Developer at Hidden Tokens" />
     <meta
       name="twitter:description"
-      content="The personal corner of the web for Tokenimizer: projects, code, and experiments."
+      content="Journal of Tokenimizer, principal developer at Hidden Tokens. Notes on privacy-first AI workflows, projects, and setups."
     />
-    <meta name="twitter:image" content="https://github.com/tokenimizer.png?size=1200" />
-    <meta name="twitter:image:alt" content="Tokenimizer’s GitHub profile avatar" />
+    <meta name="twitter:image" content="https://hiddentokens.com/assets/og-en.png" />
+    <meta name="twitter:image:alt" content="Hidden Tokens brand graphic" />
+    <link rel="alternate" type="application/atom+xml" title="Tokenimizer journal" href="/feed.xml" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -38,7 +46,7 @@
             "@type": "WebSite",
             "@id": "https://tokenimizer.github.io/#website",
             "url": "https://tokenimizer.github.io/",
-            "name": "Tokenimizer",
+            "name": "Tokenimizer | Hidden Tokens",
             "inLanguage": "en",
             "publisher": { "@id": "https://tokenimizer.github.io/#person" }
           },
@@ -47,17 +55,28 @@
             "@id": "https://tokenimizer.github.io/#person",
             "name": "Tokenimizer",
             "alternateName": "tokenimizer",
+            "jobTitle": "Principal Developer",
             "url": "https://tokenimizer.github.io/",
             "image": "https://github.com/tokenimizer.png?size=640",
-            "sameAs": ["https://github.com/tokenimizer"]
+            "worksFor": { "@id": "https://hiddentokens.com/#organization" },
+            "sameAs": ["https://github.com/tokenimizer", "https://x.com/theHiddenTokens"]
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://hiddentokens.com/#organization",
+            "name": "Hidden Tokens",
+            "url": "https://hiddentokens.com/",
+            "logo": "https://hiddentokens.com/assets/hidden-tokens-appicon.svg",
+            "sameAs": ["https://x.com/theHiddenTokens"]
           }
         ]
       }
     </script>
+    <link rel="icon" type="image/svg+xml" href="https://hiddentokens.com/assets/hidden-tokens-appicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -66,13 +85,15 @@
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
-      <a class="wordmark" href="#top" aria-label="Tokenimizer home">
-        <span class="wordmark-mark" aria-hidden="true">t.</span>
-        <span>tokenimizer</span>
+      <a class="wordmark" href="https://hiddentokens.com/" aria-label="Hidden Tokens website">
+        <img class="wordmark-mark" src="https://hiddentokens.com/assets/hidden-tokens-appicon.svg" alt="" />
+        <span class="wordmark-copy"><span class="wordmark-brand">Hidden Tokens</span><span class="wordmark-by">by Tokenimizer</span></span>
       </a>
       <nav class="site-nav" aria-label="Main navigation">
         <a href="#projects">Projects</a>
+        <a href="#journal">Journal</a>
         <a href="#about">About</a>
+        <a href="https://x.com/theHiddenTokens" target="_blank" rel="noreferrer" aria-label="Hidden Tokens on X">X <span aria-hidden="true">↗</span></a>
         <a class="nav-github" href="https://github.com/tokenimizer" target="_blank" rel="noreferrer">
           GitHub <span aria-hidden="true">↗</span>
         </a>
@@ -82,16 +103,16 @@
     <main id="main">
       <section class="intro" id="top" aria-labelledby="intro-title">
         <div class="intro-copy">
-          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> The internet home of</p>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Principal developer at <a href="https://hiddentokens.com/">Hidden Tokens</a></p>
           <h1 id="intro-title">Tokeni<br /><span>mizer</span><span class="period">.</span></h1>
-          <p class="intro-description">A small corner for things made with curiosity, care, and code.</p>
-          <a class="text-link" href="#projects">See what I’m working on <span aria-hidden="true">↓</span></a>
+          <p class="intro-description">I build Hidden Tokens, a tool that anonymises documents locally before they reach AI tools. This is where I share the work, thoughts, and setups behind it.</p>
+          <a class="text-link" href="#journal">Read the journal <span aria-hidden="true">↓</span></a>
         </div>
         <div class="portrait-wrap" aria-label="GitHub profile portrait">
           <div class="portrait-frame">
             <img id="profile-avatar" src="https://github.com/tokenimizer.png?size=640" alt="Tokenimizer’s GitHub avatar" />
           </div>
-          <span class="portrait-caption">ONLINE, SOMEWHERE <span aria-hidden="true">✳</span></span>
+          <span class="portrait-caption">HIDDEN TOKENS <span aria-hidden="true">✳</span></span>
           <span class="portrait-index" aria-hidden="true">01 / 01</span>
         </div>
         <div class="intro-side-note" aria-hidden="true">BUILD<br />IN PUBLIC</div>
@@ -129,21 +150,51 @@
         </div>
       </section>
 
+      <section class="journal-teaser section-rule" id="journal" aria-labelledby="journal-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Notes, thoughts, and setups</p>
+            <h2 id="journal-title">From the journal<span class="period">.</span></h2>
+          </div>
+          <a class="text-link" href="/journal/">All entries <span aria-hidden="true">↗</span></a>
+        </div>
+        {% assign recent_posts = site.posts | slice: 0, 3 %}
+        {% if recent_posts.size > 0 %}
+          <div class="journal-list">
+            {% for post in recent_posts %}
+              <a class="journal-row" href="{{ post.url }}">
+                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+                <span class="journal-row-copy">
+                  <span class="journal-row-title">{{ post.title | escape }}</span>
+                  <span class="journal-row-summary">{{ post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 150 | escape }}</span>
+                </span>
+                <span class="journal-row-arrow" aria-hidden="true">↗</span>
+              </a>
+            {% endfor %}
+          </div>
+        {% else %}
+          <p class="journal-empty">The journal is ready for its first entry.</p>
+        {% endif %}
+      </section>
+
       <section class="about section-rule" id="about" aria-labelledby="about-title">
-        <p class="eyebrow">A little about this place</p>
+          <p class="eyebrow">Behind Hidden Tokens</p>
         <div class="about-content">
-          <h2 id="about-title">Curiosity first.<br />Then make it real.</h2>
+            <h2 id="about-title">Build privately.<br />Think openly.</h2>
           <div class="about-details">
-            <p id="profile-bio">This is where my open-source work and experiments live. Take a look around.</p>
-            <a class="round-link" href="https://github.com/tokenimizer" target="_blank" rel="noreferrer" aria-label="Visit Tokenimizer on GitHub">↗</a>
+              <p>I’m Tokenimizer, principal developer at Hidden Tokens. I write about building privacy-first AI workflows, the tools I use, and the setups that make the work possible.</p>
+              <a class="round-link" href="https://hiddentokens.com/" aria-label="Visit Hidden Tokens">↗</a>
           </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <a class="wordmark footer-mark" href="#top"><span class="wordmark-mark" aria-hidden="true">t.</span><span>tokenimizer</span></a>
-      <p>Made with curiosity <span aria-hidden="true">✳</span></p>
+      <a class="wordmark footer-mark" href="https://hiddentokens.com/"><img class="wordmark-mark" src="https://hiddentokens.com/assets/hidden-tokens-appicon.svg" alt="" /><span class="wordmark-copy"><span class="wordmark-brand">Hidden Tokens</span><span class="wordmark-by">by Tokenimizer</span></span></a>
+      <p>Principal Developer / <a href="https://hiddentokens.com/">Hidden Tokens</a></p>
+      <a href="https://x.com/theHiddenTokens" target="_blank" rel="noreferrer">X ↗</a>
+      <a href="https://github.com/tokenimizer" target="_blank" rel="noreferrer">GitHub ↗</a>
+      <a href="/feed.xml">RSS ↗</a>
       <a href="#top">Back to top ↑</a>
     </footer>
   </body>
